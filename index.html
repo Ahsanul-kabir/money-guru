@@ -5,12 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Money Master</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!-- fontawesome icon -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap css -->
 </head>
 
 <body>
-    <h1>test</h1>
+    <header>
+        <h1 class="text-center my-5 web-title">Money Guru 💰 </h1>
+    </header>
+
+    <main class="container">
+        <section class="row g-5 py-2">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="./images/bank-img.jpg" alt="" class="w-100 h-100 rounded-3">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 calculation-container">
+                <div class="row g-3 align-items-center">
+                    <h3 class='text-center'>Income</h3>
+
+                    <div class="col-sm-10 d-inline-flex">
+                        <label class="col-sm-2 col-form-label">Income:</label>
+                        <input type="text" class="form-control" id="   ">
+                    </div>
+
+                    <h3 class='text-center'>Expenses</h3>
+
+                    <div class="col-sm-10 d-inline-flex">
+                        <label class="col-sm-2 col-form-label">Food:</label>
+                        <input type="text" class="form-control" id="   ">
+                    </div>
+                    <div class="col-sm-10 d-inline-flex">
+                        <label class="col-sm-2 col-form-label">Rent:</label>
+                        <input type="text" class="form-control" id="   ">
+                    </div>
+                    <div class="col-sm-10 d-inline-flex">
+                        <label class="col-sm-2 col-form-label">Clothes:</label>
+                        <input type="text" class="form-control" id="   ">
+                    </div>
+
+                    <div class="col-sm-10 d-flex justify-content-center pt-2">
+                        <button type="submit" class="btn btn-info">Calculate</button>
+                    </div>
+                    <!-- submit info -->
+
+                    <h3 class="text-center mt-5">Total Expenses: <span id="">5500</span> </h3>
+                    <h3 class="text-center ">Balance: <span id="">4500</span> </h3>
+
+
+                    <div class="col-sm-10 d-inline-flex justify-content-center my-3">
+                        <label class="col-sm-2 col-form-label">Save</label>
+                        <input type="text" id="   " class="form-control w-25">
+                        <span class="px-3">%</span>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+
+                    <h3 class='text-center'>Saving Amount: <span id="">2000</span> </h3>
+                    <h3 class='text-center'>Remaining Balance: <span id="">2000</span> </h3>
+
+                    <!-- find calculation-->
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
