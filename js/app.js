@@ -25,7 +25,7 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     const foodExpense = getInputValue('food-expense', false)
     const rentExpense = getInputValue('rent-expense', false)
     const clothesExpense = getInputValue('clothes-expense', false)
-    // input Fields
+    // get input Fields
 
     const errorAlert = document.getElementById('error');
     const successAlert = document.getElementById('success');
@@ -70,7 +70,7 @@ document.getElementById('calculate-save-amount').addEventListener('click', funct
     const foodExpense = getInputValue('food-expense', true)
     const rentExpense = getInputValue('rent-expense', true)
     const clothesExpense = getInputValue('clothes-expense', true)
-    // input Fields
+    // get input Fields
 
     const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
 

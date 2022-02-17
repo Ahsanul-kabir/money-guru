@@ -23,13 +23,7 @@
     font-weight: 500;
 }
 
-.waring-title {
-    font-family: Roboto;
-    font-size: 22px;
-    line-height: 21px;
-    color: red;
-    font-weight: 500;
-}
+/* calculation-container css */
 
 .notify {
     color: #fff;
@@ -46,3 +40,5 @@
     width: 35%;
     margin: 0 auto;
 }
+
+/* alert css */
