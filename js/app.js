@@ -39,11 +39,11 @@ document.getElementById('calculate-save-amount').addEventListener('click', funct
 
     const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
 
-    const saveAmount = getInputValue('save-percentage') // save-percentage
-    const savePercentage = incomeValue * (saveAmount / 100)
-    document.getElementById('save-amount').innerText = savePercentage
+    const savePercentage = getInputValue('save-percentage') // save-percentage
+    const saveAmount = incomeValue * (savePercentage / 100)
+    document.getElementById('save-amount').innerText = saveAmount
 
-    const remainingBalance = balance - savePercentage // remaining-balance
+    const remainingBalance = balance - saveAmount // remaining-balance
     document.getElementById('remaining-balance').innerText = remainingBalance
 })
 // Calculate Save Amount
