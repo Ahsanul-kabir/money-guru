@@ -1,9 +1,24 @@
 function getInputValue(moneyAmountId, isClearField) {
+    //Error field
+    const errorField = document.getElementById('error');
+    //success
+    const successField = document.getElementById('success');
+
     const getAmount = document.getElementById(moneyAmountId);
     const amount = parseFloat(getAmount.value)
-
-    if (isClearField == true) {
-        getAmount.value = ''
+    if (amount >= 0) {
+        if (isClearField == true) {
+            getAmount.value = ''
+        }
+        successField.style.display = 'block'
+        errorField.style.display = 'none'
+    }
+    if (isNaN(amount) == true || amount < 0) {
+        if (isClearField == true) {
+            getAmount.value = ''
+        }
+        errorField.style.display = 'block'
+        successField.style.display = 'none'
     }
     return amount
 }
@@ -74,7 +89,7 @@ document.getElementById('calculate-save-amount').addEventListener('click', funct
 
     if (saveAmount > balance) {
         alert('Saving Not Possible!!')
-        inputSaveAmount.innerText = "You can't save money because if more from your balance!!!"
+        inputSaveAmount.innerText = "You can't save money because it's more from your balance!!!"
         inputSaveAmount.style.color = 'red'
         inputRemainingBalance.innerText = `At least ${(-remainingBalance)}$ money need more for saving!!!`
         inputRemainingBalance.style.color = 'red'

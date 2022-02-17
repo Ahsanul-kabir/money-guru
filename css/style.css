@@ -22,3 +22,27 @@
     color: #000000;
     font-weight: 500;
 }
+
+.waring-title {
+    font-family: Roboto;
+    font-size: 22px;
+    line-height: 21px;
+    color: red;
+    font-weight: 500;
+}
+
+.notify {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    background: #222436;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    display: none;
+}
+
+.notify-section {
+    width: 35%;
+    margin: 0 auto;
+}

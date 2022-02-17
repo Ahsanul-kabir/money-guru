@@ -26,7 +26,11 @@
                 <img src="./images/bank-img.jpg" alt="" class="w-100 h-100 rounded-3">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 calculation-container">
-                <div class="row g-3 align-items-center">
+                <div class="notify-section col-sm-10 mb-4">
+                    <p id="error" class="notify">❌Invalid Input.</p>
+                    <p id="success" class="notify">✅Valid Input.</p>
+                </div>
+                <div class="row g-3 align-items-center input-from">
                     <h3 class='text-center'>Income</h3>
 
                     <div class="col-sm-10 d-inline-flex">
@@ -60,7 +64,7 @@
 
                     <div class="col-sm-10 d-inline-flex justify-content-center my-3">
                         <label class="col-sm-2 col-form-label">Save</label>
-                        <input type="text" id="save-percentage" class="form-control w-25">
+                        <input type="number" id="save-percentage" class="form-control w-25">
                         <span class="px-3">%</span>
                         <button type="submit" class="btn btn-info" id="calculate-save-amount">Save</button>
                     </div>
