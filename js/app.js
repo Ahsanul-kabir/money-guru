@@ -51,16 +51,18 @@ document.getElementById('calculate-total').addEventListener('click', function ()
         // balance upper case validation
 
         successAlert.style.display = 'block';
-        return errorAlert.style.display = 'none';
+        errorAlert.style.display = 'none';
         // check for valid input case
     }
     else if (incomeValue < 0 || foodExpense < 0 || rentExpense < 0 || clothesExpense < 0) {
+        errorAlert.innerText = '❌ Negative value not allow'
         successAlert.style.display = 'none';
-        return errorAlert.style.display = 'block';
+        errorAlert.style.display = 'block';
     }    // check for negative input
     else {
+        errorAlert.innerText = '❌ String value not allow'
         successAlert.style.display = 'none';
-        return errorAlert.style.display = 'block';
+        errorAlert.style.display = 'block';
     }    // check for string or etc
 })
 // Calculate Total Balance
