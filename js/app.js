@@ -30,14 +30,22 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     const errorAlert = document.getElementById('error');
     const successAlert = document.getElementById('success');
 
+    const totalExpense = document.getElementById('total-expense')
+    totalExpense.innerText = '0'
+    const balanceValue = document.getElementById('balance-value')
+    balanceValue.innerText = '0'
+    const inputSaveAmount = document.getElementById('save-amount')
+    inputSaveAmount.innerText = '0'
+    const inputRemainingBalance = document.getElementById('remaining-balance')
+    inputRemainingBalance.innerText = '0'
+    // initial value set for all answer shown fields
+
     if (incomeValue >= 0 && foodExpense >= 0 && rentExpense >= 0 && clothesExpense >= 0) {
         const allExpense = calculateExpense(foodExpense, rentExpense, clothesExpense)
-        const totalExpense = document.getElementById('total-expense')
         totalExpense.innerText = allExpense
         totalExpense.style.color = ''
 
         const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
-        const balanceValue = document.getElementById('balance-value')
         balanceValue.innerText = balance
         balanceValue.style.color = ''
 
