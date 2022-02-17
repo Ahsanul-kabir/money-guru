@@ -15,7 +15,6 @@ function calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
     totalBalance = incomeValue - (foodExpense + rentExpense + clothesExpense)
     return totalBalance
 }
-// Calculate Balance
 
 document.getElementById('calculate-total').addEventListener('click', function () {
     const incomeValue = getInputValue('income-value')
@@ -28,5 +27,23 @@ document.getElementById('calculate-total').addEventListener('click', function ()
 
     const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
     document.getElementById('balance-value').innerText = balance
+
 })
 // Calculate Total Balance
+
+document.getElementById('calculate-save-amount').addEventListener('click', function () {
+    const incomeValue = getInputValue('income-value')
+    const foodExpense = getInputValue('food-expense')
+    const rentExpense = getInputValue('rent-expense')
+    const clothesExpense = getInputValue('clothes-expense')
+
+    const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
+
+    const saveAmount = getInputValue('save-percentage') // save-percentage
+    const savePercentage = incomeValue * (saveAmount / 100)
+    document.getElementById('save-amount').innerText = savePercentage
+
+    const remainingBalance = balance - savePercentage // remaining-balance
+    document.getElementById('remaining-balance').innerText = remainingBalance
+})
+// Calculate Save Amount
