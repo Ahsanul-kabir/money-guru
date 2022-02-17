@@ -1,24 +1,8 @@
 function getInputValue(moneyAmountId, isClearField) {
-    //Error field
-    const errorField = document.getElementById('error');
-    //success
-    const successField = document.getElementById('success');
-
     const getAmount = document.getElementById(moneyAmountId);
     const amount = parseFloat(getAmount.value)
-    if (amount >= 0) {
-        if (isClearField == true) {
-            getAmount.value = ''
-        }
-        successField.style.display = 'block'
-        errorField.style.display = 'none'
-    }
-    if (isNaN(amount) == true || amount < 0) {
-        if (isClearField == true) {
-            getAmount.value = ''
-        }
-        errorField.style.display = 'block'
-        successField.style.display = 'none'
+    if (isClearField == true) {
+        getAmount.value = ''
     }
     return amount
 }
@@ -34,6 +18,7 @@ function calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
     totalBalance = incomeValue - (foodExpense + rentExpense + clothesExpense)
     return totalBalance
 }
+// Calculate Balance
 
 document.getElementById('calculate-total').addEventListener('click', function () {
     const incomeValue = getInputValue('income-value', false)
@@ -41,24 +26,41 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     const rentExpense = getInputValue('rent-expense', false)
     const clothesExpense = getInputValue('clothes-expense', false)
 
-    const allExpense = calculateExpense(foodExpense, rentExpense, clothesExpense)
-    const totalExpense = document.getElementById('total-expense')
-    totalExpense.innerText = allExpense
-    totalExpense.style.color = ''
+    const errorAlert = document.getElementById('error');
+    const successAlert = document.getElementById('success');
 
-    const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
-    const balanceValue = document.getElementById('balance-value')
-    balanceValue.innerText = balance
-    balanceValue.style.color = ''
+    if (incomeValue >= 0 && foodExpense >= 0 && rentExpense >= 0 && clothesExpense >= 0) {
+        const allExpense = calculateExpense(foodExpense, rentExpense, clothesExpense)
+        const totalExpense = document.getElementById('total-expense')
+        totalExpense.innerText = allExpense
+        totalExpense.style.color = ''
 
-    if (allExpense > incomeValue) {
-        alert('Expense More!!')
-        totalExpense.innerText = 'You can not expense more from your income!!!'
-        totalExpense.style.color = 'red'
-        balanceValue.innerText = `${(-balance)}$ money need more!!!`
-        balanceValue.style.color = 'red'
+        const balance = calculateBalance(incomeValue, foodExpense, rentExpense, clothesExpense)
+        const balanceValue = document.getElementById('balance-value')
+        balanceValue.innerText = balance
+        balanceValue.style.color = ''
+
+        if (allExpense > incomeValue) {
+            alert('Expense More!!')
+            totalExpense.innerText = 'You can not expense more from your income!!!'
+            totalExpense.style.color = 'red'
+            balanceValue.innerText = `${(-balance)}$ money need more!!!`
+            balanceValue.style.color = 'red'
+        }
+        // balance upper case validation
+
+        successAlert.style.display = 'block';
+        return errorAlert.style.display = 'none';
+        // check for valid input case
     }
-    // balance upper case validation
+    else if (incomeValue < 0 || foodExpense < 0 || rentExpense < 0 || clothesExpense < 0) {
+        successAlert.style.display = 'none';
+        return errorAlert.style.display = 'block';
+    }    // check for negative input
+    else {
+        successAlert.style.display = 'none';
+        return errorAlert.style.display = 'block';
+    }    // check for string or etc
 })
 // Calculate Total Balance
 
