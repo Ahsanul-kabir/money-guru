@@ -57,13 +57,19 @@ document.getElementById('calculate-save-amount').addEventListener('click', funct
 
     const savePercentage = getInputValue('save-percentage') // save-percentage
     const saveAmount = incomeValue * (savePercentage / 100)
+    if (saveAmount.length == 1) {
+        saveAmount.toFixed(1)
+    }
     const inputSaveAmount = document.getElementById('save-amount')
-    inputSaveAmount.innerText = saveAmount.toFixed(2)
+    inputSaveAmount.innerText = saveAmount
     inputSaveAmount.style.color = ''
 
     const remainingBalance = balance - saveAmount// remaining-balance
+    if (remainingBalance.length == 1) {
+        remainingBalance.toFixed(1)
+    }
     const inputRemainingBalance = document.getElementById('remaining-balance')
-    inputRemainingBalance.innerText = remainingBalance.toFixed(2)
+    inputRemainingBalance.innerText = remainingBalance
     inputRemainingBalance.style.color = ''
 
     if (saveAmount > balance) {
